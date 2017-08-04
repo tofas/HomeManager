@@ -1,4 +1,4 @@
-package com.domain.morris.homemanager;
+package com.homemanager;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

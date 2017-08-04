@@ -1,4 +1,4 @@
-package com.domain.morris.homemanager;
+package com.homemanager;
 
 import org.junit.Test;
 

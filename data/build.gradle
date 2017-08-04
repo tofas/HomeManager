@@ -4,14 +4,14 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-  compileSdkVersion 26
-  buildToolsVersion "26.0.0"
+  compileSdkVersion rootProject.ext.compileSdkVersion
+  buildToolsVersion rootProject.ext.buildToolsVersion
 
   defaultConfig {
-    minSdkVersion 22
-    targetSdkVersion 26
-    versionCode 1
-    versionName "1.0"
+    minSdkVersion rootProject.ext.minSdkVersion
+    targetSdkVersion rootProject.ext.targetSdkVersion
+    versionCode rootProject.ext.versionCode
+    versionName rootProject.ext.versionName
 
     testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
   }
@@ -26,18 +26,18 @@ android {
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   compile project(':domain')
-  compile "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
+  compile dataDependencies.appCompat
+  compile kotlinDependencies.kotlinJRE7
 
-  compile "android.arch.persistence.room:runtime:${rootProject.ext.archRoomVersion}"
-  annotationProcessor "android.arch.persistence.room:compiler:${rootProject.ext.archRoomVersion}"
-  kapt "android.arch.persistence.room:compiler:${rootProject.ext.archRoomVersion}"
+  compile dataDependencies.roomRuntime
+  annotationProcessor dataDependencies.roomCompiler
+  kapt dataDependencies.roomCompiler
 
-  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+  androidTestCompile(dataTestDependencies.espresso, {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  compile 'com.android.support:appcompat-v7:26.+'
-  testCompile 'junit:junit:4.12'
-  compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+  testCompile dataTestDependencies.junit
+
 }
 repositories {
   mavenCentral()

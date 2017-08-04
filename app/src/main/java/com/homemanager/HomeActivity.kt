@@ -1,4 +1,4 @@
-package com.domain.morris.homemanager
+package com.homemanager
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
