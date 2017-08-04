@@ -18,6 +18,7 @@ ext {
   espressoVersion = '2.2.2'
   archRoomVersion = '1.0.0-alpha1'
   junitVersion = '4.12'
+  daggerVersion = "2.5"
 
   kotlinDependencies = [
     kotlinJRE7 : "org.jetbrains.kotlin:kotlin-stdlib-jre7:${kotlinVersion}",
@@ -25,29 +26,32 @@ ext {
   ]
 
   appDependencies = [
-    appCompat : "com.android.support:appcompat-v7:${supportLibVersion}"
+    appCompat : "com.android.support:appcompat-v7:${supportLibVersion}",
+    dagger : "com.google.dagger:dagger:${daggerVersion}",
+    daggerCompiler: "com.google.dagger:dagger-compiler:${daggerVersion}"
   ]
 
   appTestDependencies = [
     espresso : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
-    junit : "junit:junit:${junitVersion}"
+    junit : "junit:junit:${junitVersion}",
   ]
 
   domainDependencies = [
   ]
 
   domainTestDependencies = [
-
   ]
 
   dataDependencies = [
       appCompat : "com.android.support:appcompat-v7:${supportLibVersion}",
       roomRuntime : "android.arch.persistence.room:runtime:${archRoomVersion}",
-      roomCompiler : "android.arch.persistence.room:compiler:${archRoomVersion}"
+      roomCompiler : "android.arch.persistence.room:compiler:${archRoomVersion}",
+      dagger : "com.google.dagger:dagger:${daggerVersion}",
+      daggerCompiler: "com.google.dagger:dagger-compiler:${daggerVersion}"
   ]
 
   dataTestDependencies = [
       espresso : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
-      junit : "junit:junit:${junitVersion}"
+      junit : "junit:junit:${junitVersion}",
   ]
 }

@@ -32,6 +32,8 @@ dependencies {
 
   compile appDependencies.appCompat
   compile kotlinDependencies.kotlinJRE7
+  compile appDependencies.dagger
+  kapt appDependencies.daggerCompiler
 
   androidTestCompile(appTestDependencies.espresso, {
     exclude group: 'com.android.support', module: 'support-annotations'

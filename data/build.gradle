@@ -28,6 +28,8 @@ dependencies {
   compile project(':domain')
   compile dataDependencies.appCompat
   compile kotlinDependencies.kotlinJRE7
+  compile dataDependencies.dagger
+  kapt dataDependencies.daggerCompiler
 
   compile dataDependencies.roomRuntime
   annotationProcessor dataDependencies.roomCompiler
