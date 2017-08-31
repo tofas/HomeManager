@@ -63,3 +63,7 @@ google-services.json
 freeline.py
 freeline/
 freeline_project_description.json
+libs/
+src/androidTest/java/com/domain/
+src/main/res/drawable/
+src/test/java/com/domain/
