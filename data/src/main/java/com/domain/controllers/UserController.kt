@@ -2,10 +2,15 @@ package com.domain.controllers
 
 import com.domain.data.UserDO
 import com.domain.data.dao.UserDao
+import com.domain.data.entities.User
 
-class UserControllerImpl(val userDao: UserDao) : UserController {
+class UserController(val userDao: UserDao) {
 
-  override fun getUser(): UserDO? {
+  fun addUser(user: User) {
+    userDao.insert(user)
+  }
+
+  fun getUser(): UserDO? {
     val users = userDao.getUser()
     if(users.isEmpty())
       return null
@@ -15,7 +20,7 @@ class UserControllerImpl(val userDao: UserDao) : UserController {
     }
   }
 
-  override fun deleteUser() {
+  fun deleteUser() {
     val users = userDao.getUser()
     if(!users.isEmpty())
       userDao.delete(users[0])

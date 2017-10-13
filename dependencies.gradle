@@ -10,7 +10,7 @@ ext {
   minSdkVersion = 22
   targetSdkVersion = 26
 
-  versionCode = 10000;
+  versionCode = 10000
   versionName = '1.0.0'
   applicationId = 'com.homemanager'
 
