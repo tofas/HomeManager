@@ -4,16 +4,16 @@ import android.arch.persistence.room.Dao
 import android.arch.persistence.room.Delete
 import android.arch.persistence.room.Insert
 import android.arch.persistence.room.Query
-import com.domain.data.entities.User
+import com.domain.data.entities.Transaction
 
 @Dao
-interface UserDao {
-  @Query("SELECT * FROM user")
-  fun getUser(): User
+interface TransactionDao {
+  @Query("SELECT * FROM transaction")
+  fun getTransactions(): List<Transaction>
 
   @Insert
-  fun insert(user: User)
+  fun insert(transaction: Transaction)
 
   @Delete
-  fun delete(user: User)
+  fun delete(transaction: Transaction)
 }

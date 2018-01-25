@@ -25,6 +25,7 @@ android {
       debuggable true
     }
   }
+  buildToolsVersion '26.0.2'
 }
 
 dependencies {
@@ -40,6 +41,8 @@ dependencies {
   })
 
   testCompile appTestDependencies.junit
+  compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+  compile project(path: ':presentation')
 }
 
 
