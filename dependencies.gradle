@@ -5,12 +5,12 @@ ext {
   jvmTarget = '1.8'
 
   compileSdkVersion = 26
-  buildToolsVersion = '26.0.0'
+  buildToolsVersion = '26.0.2'
 
   minSdkVersion = 22
   targetSdkVersion = 26
 
-  versionCode = 10000;
+  versionCode = 10000
   versionName = '1.0.0'
   applicationId = 'com.homemanager'
 
@@ -36,10 +36,22 @@ ext {
     junit : "junit:junit:${junitVersion}",
   ]
 
+  presentationDependencies = [
+      dagger : "com.google.dagger:dagger:${daggerVersion}",
+      daggerCompiler: "com.google.dagger:dagger-compiler:${daggerVersion}"
+  ]
+
+  presentationTestDependencies = [
+      junit : "junit:junit:${junitVersion}",
+  ]
+
   domainDependencies = [
+      dagger : "com.google.dagger:dagger:${daggerVersion}",
+      daggerCompiler: "com.google.dagger:dagger-compiler:${daggerVersion}"
   ]
 
   domainTestDependencies = [
+      junit : "junit:junit:${junitVersion}"
   ]
 
   dataDependencies = [
