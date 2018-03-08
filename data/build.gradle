@@ -21,20 +21,20 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
-  buildToolsVersion '26.0.2'
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile fileTree(include: ['*.jar'], dir: 'libs')
   compile project(':domain')
   compile dataDependencies.appCompat
   compile kotlinDependencies.kotlinJRE7
   compile dataDependencies.dagger
   kapt dataDependencies.daggerCompiler
-
   compile dataDependencies.roomRuntime
   annotationProcessor dataDependencies.roomCompiler
   kapt dataDependencies.roomCompiler
+
+  compile 'com.google.android.gms:play-services-auth:11.8.0'
 
   androidTestCompile(dataTestDependencies.espresso, {
     exclude group: 'com.android.support', module: 'support-annotations'

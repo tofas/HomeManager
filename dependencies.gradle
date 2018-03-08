@@ -14,9 +14,9 @@ ext {
   versionName = '1.0.0'
   applicationId = 'com.homemanager'
 
-  supportLibVersion = '26.0.0'
+  supportLibVersion = '26.1.0'
   espressoVersion = '2.2.2'
-  archRoomVersion = '1.0.0-alpha1'
+  archRoomVersion = '1.0.0'
   junitVersion = '4.12'
   daggerVersion = "2.5"
 
